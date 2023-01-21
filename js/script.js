@@ -16,9 +16,9 @@ for ( let i = 0; i < bills.length; i++ ) {
 
 
 // Display data on front-end
-displayData(bills)
-displayData(tips)
-displayData(total)
+// displayData(bills)
+// displayData(tips)
+// displayData(total)
 
 function displayData( arrayVal ) {
   

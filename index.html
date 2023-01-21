@@ -7,8 +7,33 @@
     <title>Tip Calculator</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="min-h-screen">
-    
+<body class="min-h-screen bg-blue-600 text-white py-3 font-primaryFont">
+    <main role="main">
+        <div class="container mx-auto relative">
+            <h1 class="text-center text-[4rem] mb-[1em] leading-tight font-medium">Tip Calculator</h1>
+            <div class="rounded-2xl bg-white text-gray-800 py-8 px-6">
+                <form class="flex flex-col justify-start items-stretch w-full h-full" action="#" method="post">
+                    <div class="w-full grid grid-cols-12 mb-10">
+                        <label for="bill" class="inline-flex justify-start items-center col-span-3 font-bold text-xl">Bill:</label>
+                        <input type="number" name="bill" placeholder="Place your bill amount here..." id="bill" class="min-h-[52px] appearance-none border p-3 border-solid border-black border-[2px] inline-block col-span-9">
+                    </div>
+                    <div class="w-full grid grid-cols-12 mb-10">
+                        <label for="tip" class="inline-flex justify-start items-center col-span-3 font-bold text-xl">How much would you like to tip?</label>
+                        <select type="number" name="tip" id="tip" class="min-h-[52px] bg-white cursor-pointer border p-3 border-solid border-black border-[2px] inline-block col-span-9">
+                            <option value="0.3">30%</option>
+                            <option value="0.2">20%</option>
+                            <option value="0.1">10%</option>
+                            <option value="0.08">8%</option>
+                        </select>
+                    </div>
+                    <div class="w-full grid grid-cols-12">
+                        <div class="inline-flex justify-start items-center col-span-3 font-bold text-xl">Total:</div>
+                        <div id="total" class="min-h-[52px] border p-3 border-solid border-black border-[2px] inline-block col-span-9">0</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
     <script src="./js/script.js"></script>
 </body>
 </html>
