@@ -5,6 +5,12 @@ const calcButton = document.getElementById('calculate')
 const total = document.getElementById('total')
 const totalWrapper = document.getElementById('total-wrapper')
 
+// Deactivate button if values are invalid
+billInput.addEventListener('keypress', (e) => {
+  let keyPressed = e.key;
+  ( !isFinite(keyPressed) ) ? calcButton.setAttribute( 'disabled', '' ) : calcButton.removeAttribute('disabled')
+})
+
 // Calculate
 calcButton.addEventListener('click', (e) => {
 
