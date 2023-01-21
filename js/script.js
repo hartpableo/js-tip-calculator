@@ -1,39 +1,20 @@
 // Declare variables
-let bills = [ 125, 555, 44, 300 ]
-let tips = []
-let total = []
+const billInput = document.getElementById('bill')
+const tipInput = document.getElementById('tip')
+const calcButton = document.getElementById('calculate')
+const total = document.getElementById('total')
+const totalWrapper = document.getElementById('total-wrapper')
 
-// Calculate the tip
-bills.forEach(( bill ) => {
-  const tip = bill <= 300 && bill >= 50 ? bill * .15 : bill * .2
-  tips.push(tip);
+// Calculate
+calcButton.addEventListener('click', (e) => {
+
+  e.preventDefault()
+  
+  const billAmount = billInput.value
+  const tipAmount = tipInput.value
+  const totalAmount = (billAmount * tipAmount).toFixed(2)
+
+  totalWrapper.style.display = ''
+  total.textContent = totalAmount
+
 })
-
-// Calculate total ( bill + tip )
-for ( let i = 0; i < bills.length; i++ ) {
-  total.push(bills[i] + tips[i])
-}
-
-
-// Display data on front-end
-// displayData(bills)
-// displayData(tips)
-// displayData(total)
-
-function displayData( arrayVal ) {
-  
-  if (Array.isArray(arrayVal) == true) {
-   let html = '<ul>'
-
-    arrayVal.forEach(( item ) => {
-      html += `<li>${item}</li>`
-    })
-
-    html += '</ul>'
-
-    document.write(html) 
-  } else {
-    document.write('Data given is NOT an array!')
-  }
-  
-}
